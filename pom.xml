@@ -8,5 +8,36 @@
     <artifactId>orangehrm-test-automation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- Let intellij know to compile our code using the appropriate java version. -->
+    <properties>
+        <maven.compiler.target>1.11</maven.compiler.target>
+        <maven.compiler.source>1.11</maven.compiler.source>
+    </properties>
+
+    <!-- Maven Repository for Selenium Chrome Driver
+    (https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver/3.141.59) -->
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <!-- Include selenium support dependency -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <!-- Include TestNG dependency -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.10</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 
 </project>
