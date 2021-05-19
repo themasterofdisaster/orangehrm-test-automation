@@ -8,8 +8,8 @@ public class LogInTests extends BaseTests {
 
     @Test
     public void invalidPasswordTest(){
-        loginPage.setUsername("TestUser");
-        loginPage.setPassword("123123");
+        loginPage.typeUsername("TestUser");
+        loginPage.typePassword("123123");
         loginPage.clickLoginButton();
 
         assertEquals(loginPage.getSpanMessage(), "Invalid credentials", "Span message does not match the expected");
@@ -17,20 +17,17 @@ public class LogInTests extends BaseTests {
 
     @Test
     public void emptyPasswordTest(){
-        loginPage.setUsername("Admin");
+        loginPage.typeUsername("Admin");
         loginPage.clickLoginButton();
 
         assertEquals(loginPage.getSpanMessage(), "Invalid credentials", "Password cannot be empty");
     }
 
     @Test
-    public void correctLoginTest(){
-        loginPage.setUsername("Admin");
-        loginPage.setPassword("admin123");
-        DashboardPage dashboardPage = loginPage.clickLoginButton();
+    public void successfulLoginTest(){
+        DashboardPage dashboardPage = loginPage.login();
 
-        assertEquals(dashboardPage.getContentHeader(),"Dashboard", "Content header does not match thee expected" );
-        ;
+        assertEquals(dashboardPage.getContentHeader(),"Dashboard", "Content header does not match the expected" );
 
     }
 
