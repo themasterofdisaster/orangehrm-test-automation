@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BasePage {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     private By contentHead = By.cssSelector("#content .head");
 
